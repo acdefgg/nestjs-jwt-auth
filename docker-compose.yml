@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: your-db-user
+      POSTGRES_PASSWORD: your-db-password
+      POSTGRES_DATABASE: your-db-name
+    depends_on:
+      - redis
+      - postgres
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:16.1
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: your-db-user
+      POSTGRES_PASSWORD: your-db-password
+      POSTGRES_DB: your-db-name
