@@ -28,7 +28,7 @@ Nest.js JWT authentication application example using docker-compose, redis and p
 
 ## Сertificate generation
 
-First, you need to generate a private and public JWT RS256 key.
+First, you need to generate a private and public JWT RS256 key: `private-key.pem` and `public-key.pem`.
 
 ## Building the app
 
