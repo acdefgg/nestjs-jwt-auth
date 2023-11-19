@@ -83,7 +83,7 @@ $ docker-compose up
       ```
 #### 1.4 Sign Out
 
-- **Endpoint**: `POST /auth/refresh-token`
+- **Endpoint**: `POST /auth/sign-out`
 - **Description**: Invalidate the refresh token, effectively signing the user out.
 - **Request**:
     - Body:
